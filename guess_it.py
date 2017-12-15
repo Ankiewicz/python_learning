@@ -20,13 +20,18 @@ def game():
                 print("Higher...")
             else:
                 print("That's not it!")
+                guess = ""
             guesses.append(guess)
     else:
         print("You didn't get it! my number was {}.".format(secret_num))
 
-    play_again = input("Do you want to play again? (Y/n): ")
-    if play_again.lower() != "n":
-        game()
+    try:
+        play_again = raw_input("Do you want to play again? (Y/n): ")
+    except ValueError:
+        play_again = "Y"
     else:
-        print("Good Day Good Sir|Miss!")
+        if play_again.lower() != "n":
+            game()
+        else:
+            print("Good Day Good Sir|Miss!")
 game()
