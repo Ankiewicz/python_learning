@@ -23,4 +23,10 @@ def game():
             guesses.append(guess)
     else:
         print("You didn't get it! my number was {}.".format(secret_num))
+
+    play_again = input("Do you want to play again? (Y/n): ")
+    if play_again.lower() != "n":
+        game()
+    else:
+        print("Good Day Good Sir|Miss!")
 game()
